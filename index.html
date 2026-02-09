@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Captain zoya</title>
+    <title>Captain Zoya</title>
     <style>
         /* General Styles */
         body {
@@ -23,7 +23,6 @@
             width: 90%;
             max-width: 400px;
             padding: 20px;
-            /* Bottom se upar aane wali animation */
             animation: slideUp 1s ease-out;
         }
 
@@ -32,7 +31,6 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Profile & Logo */
         .logo-circle {
             width: 120px;
             height: 120px;
@@ -43,9 +41,8 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 0 20px rgba(240, 152, 25, 0.4);
+            overflow: hidden;
         }
-
-        .logo-text { color: #000; font-weight: bold; font-size: 14px; }
 
         h1 { font-size: 28px; margin: 10px 0; letter-spacing: 1px; }
 
@@ -56,7 +53,6 @@
             display: block;
         }
 
-        /* Badges */
         .badges {
             display: flex;
             justify-content: center;
@@ -74,7 +70,6 @@
         .premium { border: 1px solid #f09819; color: #f09819; }
         .live { background-color: #7a1a1a; color: #ff4d4d; }
 
-        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -85,7 +80,12 @@
         .stat-box h2 { color: #f09819; margin: 0; font-size: 22px; }
         .stat-box p { font-size: 12px; color: #aaaaaa; margin: 5px 0; }
 
-        /* Telegram Button */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
         .btn-telegram {
             background-color: #f09819;
             color: #000;
@@ -97,11 +97,13 @@
             font-size: 18px;
             margin-bottom: 30px;
             transition: transform 0.2s;
+            animation: floating 2s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(240, 152, 25, 0.4);
+            cursor: pointer;
         }
 
         .btn-telegram:active { transform: scale(0.95); }
 
-        /* Info Sections */
         .info-section {
             text-align: left;
             margin-bottom: 20px;
@@ -115,25 +117,14 @@
             font-size: 12px;
             color: #666;
         }
-   /* Button ko move karne ke liye animation */
-@keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.btn-telegram {
-    animation: floating 2s ease-in-out infinite; /* Yeh button ko upar-neeche move karega */
-    box-shadow: 0 5px 15px rgba(240, 152, 25, 0.4);
-}
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="logo-circle">
-    <img src="logo.png" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-</div>
+        <img src="logo.png" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+    </div>
 
     <h1>Captain Zoya</h1>
     <span class="verified">👥 10k+ Active Members (Verified)</span>
@@ -158,7 +149,8 @@
         </div>
     </div>
 
-    <a href="https://t.me/+o6JuIOq4eNtiNWU9" class="btn-telegram">🚀 Join Telegram Channel</a>
+    <a href="https://t.me/+o6JuIOq4eNtiNWU9" class="btn-telegram" onclick="trackSubscribe()">🚀 Join Telegram Channel</a>
+
     <div class="info-section">
         <h3>✅ Pre-Match Cricket Analysis</h3>
         <p>Smart & research-based insights before every match.</p>
@@ -173,6 +165,27 @@
         © 2024 Captain Zoya • Cricket Analysis Platform
     </footer>
 </div>
+
+<script>
+function trackSubscribe() {
+    // Console log for testing
+    console.log("Tracking Event: Subscribe Triggered");
+
+    // Facebook Pixel Event
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Subscribe');
+    } else {
+        console.warn("Facebook Pixel not detected. Make sure Base Code is in Head.");
+    }
+
+    // Google Analytics Event
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+            'send_to': 'YOUR_CONVERSION_ID' 
+        });
+    }
+}
+</script>
 
 </body>
 </html>
