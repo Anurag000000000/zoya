@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain Jiya - Cricket Analysis</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0c0908;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
 
+        .container {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            /* Bottom se upar aane wali animation */
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Profile & Logo */
+        .logo-circle {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #f09819, #edde5d);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(240, 152, 25, 0.4);
+        }
+
+        .logo-text { color: #000; font-weight: bold; font-size: 14px; }
+
+        h1 { font-size: 28px; margin: 10px 0; letter-spacing: 1px; }
+
+        .verified {
+            color: #4da3ff;
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .premium { border: 1px solid #f09819; color: #f09819; }
+        .live { background-color: #7a1a1a; color: #ff4d4d; }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box h2 { color: #f09819; margin: 0; font-size: 22px; }
+        .stat-box p { font-size: 12px; color: #aaaaaa; margin: 5px 0; }
+
+        /* Telegram Button */
+        .btn-telegram {
+            background-color: #f09819;
+            color: #000;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+
+        .btn-telegram:active { transform: scale(0.95); }
+
+        /* Info Sections */
+        .info-section {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .info-section h3 { font-size: 16px; margin-bottom: 5px; }
+        .info-section p { font-size: 14px; color: #cccccc; line-height: 1.5; margin: 0; }
+
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-circle">
+        <div class="logo-text">CAPTAIN JIYA</div>
+    </div>
+
+    <h1>Captain Jiya</h1>
+    <span class="verified">👥 10k+ Active Members (Verified)</span>
+
+    <div class="badges">
+        <div class="badge premium">🏆 Premium Analyst</div>
+        <div class="badge live">⚡ Live Updates</div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <h2>98K+</h2>
+            <p>Match Analysis</p>
+        </div>
+        <div class="stat-box">
+            <h2>Expert</h2>
+            <p>Insights</p>
+        </div>
+        <div class="stat-box">
+            <h2>4.9★</h2>
+            <p>User Rating</p>
+        </div>
+    </div>
+
+    <a href="#" class="btn-telegram">🚀 Join Telegram Channel</a>
+    <div class="info-section">
+        <h3>✅ Pre-Match Cricket Analysis</h3>
+        <p>Smart & research-based insights before every match.</p>
+    </div>
+
+    <div class="info-section">
+        <h3>🔥 Transparent & Trusted</h3>
+        <p>Community-driven cricket analysis with live updates.</p>
+    </div>
+
+    <footer>
+        © 2024 Captain Jiya • Cricket Analysis Platform
+    </footer>
+</div>
+
+</body>
+</html>
